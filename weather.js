@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import {getArgs} from './helpers/args.js';
+import { printHelp } from './services/log.service.js';
 
 const initCLI = () => {
     // таким чином можна подивитися які параметри ми передаєм при виклиці цього файла
@@ -7,7 +8,7 @@ const initCLI = () => {
     const args = getArgs(process.argv)
     // а ось тут ми хедлимо передані параметри і виводимо щось в консоль
     if (args.h) {
-        console.log('help');
+        printHelp();
     } 
     if (args.c) {
         console.log(`city ${args.c}`);
