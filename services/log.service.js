@@ -1,4 +1,6 @@
+// this lib for change color in console
 import chalk from 'chalk';
+// this lib for remove extra space in console
 import dedent from 'dedent-js';
 
 const printError = (err) => {

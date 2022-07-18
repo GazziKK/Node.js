@@ -1,6 +1,18 @@
 #!/usr/bin/env node
 import {getArgs} from './helpers/args.js';
-import { printHelp } from './services/log.service.js';
+import { printError, printHelp, printSuccess } from './services/log.service.js';
+import { saveKeyValue } from './services/storage.service.js';
+
+const saveToken = async (token) => {
+    try {
+        await saveKeyValue('token', token)
+        printSuccess('Token Saved')
+
+    } catch(e) {
+        printError('Token not save')
+    }
+
+}
 
 const initCLI = () => {
     // таким чином можна подивитися які параметри ми передаєм при виклиці цього файла
@@ -14,7 +26,7 @@ const initCLI = () => {
         console.log(`city ${args.c}`);
     }
     if (args.t) {
-        console.log('token');
+        return saveToken(args.t)
     }
 }
 
