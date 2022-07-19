@@ -30,7 +30,10 @@ import { promises } from 'fs';
 // показує який саме роздільний знак буде розділяти шляхи
 // sep()
 
-
+const TOKEN_DICTIONARY = {
+    token: 'token',
+    city: 'city'
+}
 
 const filePath = join(homedir(), 'Project/Node.js/weather-data.json') 
 
@@ -63,4 +66,4 @@ const isExist = async (path) => {
     }
 }
 
-export { saveKeyValue, getKeyValue }
+export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY }

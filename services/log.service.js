@@ -9,7 +9,7 @@ const printError = (err) => {
         );
 }
 
-const printSuccess = (res) => {
+const printSuccess = (res = '') => {
     console.log(
         chalk.bgGreen('SUCCESS ', res)
         );
@@ -27,4 +27,14 @@ const printHelp = () => {
     );
 } 
 
-export {printError, printSuccess, printHelp};
+const printInfo = (info) => {
+    console.log(
+         dedent(
+            `${chalk.bgCyan('INFO: ')}
+            ${info}
+            `
+         )
+    );
+} 
+
+export {printError, printSuccess, printHelp, printInfo};
