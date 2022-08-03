@@ -1,10 +1,10 @@
 {
-  "name": "weather-cli",
+  "name": "expres.js",
   "version": "1.0.0",
-  "description": "CLI for getting weather",
+  "description": "Lesson Express",
   "main": "weather.js",
   "bin": {
-    "weather": "./weather.js"
+    "app": "./app.js"
   },
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/GazziKK/Node.js.git"
   },
   "keywords": [
-    "weather",
+    "Express",
     "cli"
   ],
   "author": "GazziK",
@@ -26,8 +26,6 @@
   },
   "homepage": "https://github.com/GazziKK/Node.js#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "chalk": "^5.0.1",
-    "dedent-js": "^1.0.1"
+    "axios": "^0.27.2"
   }
 }
