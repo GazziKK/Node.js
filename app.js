@@ -1,4 +1,5 @@
 import express from 'express';
+import { router } from './users/users.js';
 
 const app = express()
 const port = 8000
@@ -16,12 +17,10 @@ app.get('/hello', (req, res) => {
             <h1>Hello</h1>
             <hr>
         `
-        )
+    )
 })
 
-app.post('/hello', (req, res) => {
-    res.send('Post hello')
-})
+app.use('/users', router)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}!`)
