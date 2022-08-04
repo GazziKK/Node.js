@@ -2,7 +2,7 @@
   "name": "expres.js",
   "version": "1.0.0",
   "description": "Lesson Express",
-  "main": "weather.js",
+  "main": "app.js",
   "bin": {
     "app": "./app.js"
   },
@@ -15,10 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/GazziKK/Node.js.git"
   },
-  "keywords": [
-    "Express",
-    "cli"
-  ],
   "author": "GazziK",
   "license": "ISC",
   "bugs": {
@@ -26,6 +22,7 @@
   },
   "homepage": "https://github.com/GazziKK/Node.js#readme",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
   }
 }

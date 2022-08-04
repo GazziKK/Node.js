@@ -1,14 +1,28 @@
-import http from 'http';
+import express from 'express';
 
-const host = '127.0.0.1';
-const port = '8000';
+const app = express()
+const port = 8000
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain')
-    res.end('Hello')
+app.all('/hello', (req, res, next) => {
+    console.log('All Works');
+    next();
 })
 
-server.listen(port, host, () => {
-    console.log(`Server Is Run on ${host}:${port}`);
+
+app.get('/hello', (req, res) => {
+    res.set('Content-Type', 'text/plain')
+    res.send(
+        `
+            <h1>Hello</h1>
+            <hr>
+        `
+        )
+})
+
+app.post('/hello', (req, res) => {
+    res.send('Post hello')
+})
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}!`)
 })
