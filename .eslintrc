@@ -5,10 +5,10 @@
         "@typescript-eslint"
     ],
     "extends": [
-        "eslint:recommend",
-        "plugin:@typescript-eslint/eslint-recommend",
-        "plugin:@typescript-eslint/recommend",
-        "plugin:prettier/recommend"
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "rules": {
         "no-empty-function": "off",
@@ -16,6 +16,7 @@
         "@typescript-eslint/no-unused-vars": [
             "off"
         ],
+        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/explicit-function-return-type": [
             "warn"
         ],
@@ -23,10 +24,10 @@
             "error",
             {
                 "singleQuote": true,
+                "trailingComma": "all",
                 "useTabs": true,
                 "semi": true,
-                "trailingComma": "all",
-                "bracketSpaceng": true,
+                "bracketSpacing": true,
                 "printWidth": 100,
                 "endOfLine": "auto"
             }
