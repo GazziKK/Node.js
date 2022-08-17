@@ -6,6 +6,7 @@ import { ILogger } from './logger/logger.interface';
 import { TYPES } from './types';
 import { UserController } from './users/users.controller';
 import 'reflect-metadata';
+import { json } from 'body-parser';
 
 @injectable()
 export class App {
@@ -23,10 +24,15 @@ export class App {
 	}
 
 	public async init(): Promise<void> {
+		this.useMidleware();
 		this.useRouters();
 		this.useExeptinFilters();
 		this.server = this.app.listen(this.port);
 		this.loggerService.log(`Server is runing in http://localhost:${this.port}`);
+	}
+
+	public useMidleware(): void {
+		this.app.use(json());
 	}
 
 	public useRouters(): void {
