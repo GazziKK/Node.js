@@ -11,7 +11,8 @@ import { TYPES } from './types';
 import { UserService } from './users/dto/user.service';
 import { IUserService } from './users/dto/user.service.interface';
 import { UserController } from './users/users.controller';
-import { IUserController } from './users/users.interface';
+import { IUserController, IUsersRepository } from './users/users.interface';
+import { UsersRepository } from './users/users.repository';
 
 export interface IBootstrapReturn {
 	appContainer: Container;
@@ -25,6 +26,7 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<IUserService>(TYPES.UserService).to(UserService).inSingletonScope();
 	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
 	bind<PrismaService>(TYPES.PrismaService).to(PrismaService).inSingletonScope();
+	bind<IUsersRepository>(TYPES.UsersRepository).to(UsersRepository).inSingletonScope();
 	bind<App>(TYPES.Application).to(App).inSingletonScope();
 });
 
