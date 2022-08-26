@@ -3,6 +3,7 @@ import express, { Express } from 'express';
 import { inject, injectable } from 'inversify';
 import { Server } from 'node:http';
 import 'reflect-metadata';
+import { AuthMiddleware } from './common/auth.middleware';
 import { IConfigService } from './config/config.service.interface';
 import { PrismaService } from './data-base/prisma.service';
 import { IExeptionFilter } from './errors/exeption.filter.interface';
@@ -38,6 +39,8 @@ export class App {
 
 	public useMidleware(): void {
 		this.app.use(json());
+		const authMiddleware = new AuthMiddleware(this.configService.get('SECRET'));
+		this.app.use(authMiddleware.execute.bind(authMiddleware));
 	}
 
 	public useRouters(): void {
